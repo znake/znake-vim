@@ -12,7 +12,7 @@
 " up some of the funny behaviors for editing e-mails and such.
 "
 " To use for gvim:
-" 1: install this file as ~/.vim/colors/railscasts.vim
+" 1: install this file as ~/.vim/colors/znake.vim
 " 2: put "colorscheme znake" in your .gvimrc
 "
 " If you are using Ubuntu, you can get the benefit of this in your
@@ -22,7 +22,7 @@
 " 2: put the following in your .vimrc
 "     if $COLORTERM == 'gnome-terminal'
 "         set term=gnome-256color
-"         colorscheme railscasts
+"         colorscheme znake
 "     else
 "         colorscheme default
 "     endif
