@@ -6,4 +6,4 @@ Check out the original from [Nick Moffitt](http://www.vim.org/scripts/script.php
 
 Screenshot:
 
-![Screenshot_znake](http://img850.imageshack.us/img850/7537/bildschirmfoto20110402ug.png)
+![Screenshot_znake](https://github.com/znake/znake-vim/blob/master/screenshot.png?raw=true)
