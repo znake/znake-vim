@@ -12,8 +12,8 @@
 " up some of the funny behaviors for editing e-mails and such.
 "
 " To use for gvim:
-" 1: install this file as ~/.vim/colors/znake.vim
-" 2: put "colorscheme znake" in your .gvimrc
+" 1: install this file as ~/.vim/colors/railscasts.vim
+" 2: put "colorscheme railscasts" in your .gvimrc
 "
 " If you are using Ubuntu, you can get the benefit of this in your
 " terminals using ordinary vim by taking the following steps:
@@ -22,7 +22,7 @@
 " 2: put the following in your .vimrc
 "     if $COLORTERM == 'gnome-terminal'
 "         set term=gnome-256color
-"         colorscheme znake
+"         colorscheme railscasts
 "     else
 "         colorscheme default
 "     endif
@@ -95,4 +95,5 @@ highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=u
 highlight SpellBad                  guifg=#D70000 ctermfg=160 ctermbg=NONE cterm=underline
 highlight SpellRare                 guifg=#D75F87 ctermfg=168 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 highlight SpellCap                  guifg=#D0D0FF ctermfg=189 guibg=NONE ctermbg=NONE gui=underline cterm=underline
-highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#005f5f ctermbg=23
+highlight MatchParen                guifg=#FFFFFF ctermfg=15 guibg=#800040 ctermbg=23
+
