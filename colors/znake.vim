@@ -12,8 +12,8 @@
 " up some of the funny behaviors for editing e-mails and such.
 "
 " To use for gvim:
-" 1: install this file as ~/.vim/colors/railscasts.vim
-" 2: put "colorscheme railscasts" in your .gvimrc
+" 1: install this file as ~/.vim/colors/znake.vim
+" 2: put "colorscheme znake" in your .gvimrc
 "
 " If you are using Ubuntu, you can get the benefit of this in your
 " terminals using ordinary vim by taking the following steps:
@@ -22,7 +22,7 @@
 " 2: put the following in your .vimrc
 "     if $COLORTERM == 'gnome-terminal'
 "         set term=gnome-256color
-"         colorscheme railscasts
+"         colorscheme znake
 "     else
 "         colorscheme default
 "     endif
@@ -68,7 +68,7 @@ highlight String                    guifg=#A5C261 ctermfg=107
 highlight Title                     guifg=#FFFFFF ctermfg=15
 highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
 highlight Visual                    guibg=#420000 ctermbg=60
-highlight Folded 		                guibg=#262b31 guifg=#a0a8b0 gui=none
+highlight Folded 		                guibg=#000014 guifg=#a0a8b0 gui=none
 
 highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
@@ -97,5 +97,3 @@ highlight SpellBad                   guibg=#2b0000 gui=NONE
 highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE 
 highlight SpellCap                   guifg=#D0D0FF ctermfg=189 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellLocal                 guibg=#2b0000 gui=NONE
-
-
