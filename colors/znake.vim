@@ -1,4 +1,4 @@
-" Vim color scheme based on: 
+" Vim color scheme based on:
 "
 " Name:         railscasts.vim
 " Maintainer:   Nick Moffitt <nick@zork.net>
@@ -44,12 +44,12 @@ hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
-highlight Normal                    guifg=#E6E1DC guibg=#000000 
-highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FF0066 ctermbg=15	
+highlight Normal                    guifg=#E6E1DC guibg=#000000
+highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#ff0080
 highlight MatchParen                guifg=#E6E1DC ctermfg=15 gui=NONE guibg=#660066 ctermbg=23
 highlight CursorLine                guibg=#1b000d ctermbg=233 cterm=NONE
 highlight NonText 		              guifg=#FF0066 ctermfg=12
-highlight Comment                   guifg=#BC9458 ctermfg=180 gui=italic
+highlight Comment                   guifg=#2a5680 ctermfg=180 gui=italic
 highlight Constant                  guifg=#6D9CBE ctermfg=73
 highlight Define                    guifg=#CC7833 ctermfg=173
 highlight Error                     guifg=#FFC66D ctermfg=221 guibg=#990000 ctermbg=88
@@ -59,7 +59,7 @@ highlight Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NON
 highlight PreCondit                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 highlight Keyword                   guifg=#CC7833 ctermfg=173 cterm=NONE
 highlight LineNr                    guifg=#535353 ctermfg=159 guibg=#000000
-highlight Number                    guifg=#bb4bbb ctermfg=107
+highlight Number                    guifg=#FFC66D ctermfg=107
 highlight PreProc                   guifg=#E6E1DC ctermfg=103
 highlight Search                    guifg=#a0a8b0 ctermfg=NONE guibg=#004080 ctermbg=235 gui=italic cterm=underline
 highlight IncSearch                 guifg=#004080 guibg=#a0a8b0 ctermfg=White ctermbg=Black
@@ -68,11 +68,11 @@ highlight String                    guifg=#A5C261 ctermfg=107
 highlight Title                     guifg=#FFFFFF ctermfg=15
 highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NONE
 highlight Visual                    guibg=#420000 ctermbg=60
-highlight Folded 		                guibg=#000014 guifg=#a0a8b0 gui=none
+highlight Folded 		                guibg=#00003c guifg=#a0a8b0 gui=none
 
 highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
-highlight Special                   guifg=#DA4939 ctermfg=167 
+highlight Special                   guifg=#DA4939 ctermfg=167
 
 highlight pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
 highlight rubyBlockParameter        guifg=#FFFFFF ctermfg=15
@@ -94,6 +94,13 @@ highlight mailHeaderKey             guifg=#FFC66D ctermfg=221
 highlight mailEmail                 guifg=#A5C261 ctermfg=107 gui=italic cterm=underline
 
 highlight SpellBad                   guibg=#2b0000 gui=NONE
-highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE 
+highlight SpellRare                  guifg=#E6E1DC ctermfg=168 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellCap                   guifg=#D0D0FF ctermfg=189 gui=NONE guibg=NONE ctermbg=NONE
 highlight SpellLocal                 guibg=#2b0000 gui=NONE
+
+highlight VimwikiHeader1             guifg=#ff6666
+highlight VimwikiHeader2             guifg=#ff8000
+highlight VimwikiHeader3             guifg=#ffff66
+highlight VimwikiHeader4             guifg=#66ffcc
+highlight VimwikiHeader5             guifg=#008040
+highlight VimwikiHeader6             guifg=#66ccff
