@@ -2,7 +2,7 @@
 " http://www.artathack.com
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
-" Pretty much stolen from  the Tomorrow theme https://github.com/chriskempson/tomorrow-theme
+" Pretty much stolen from the Tomorrow theme https://github.com/chriskempson/tomorrow-theme
 
 " Default GUI Colours
 let s:foreground = "eaeaea"
@@ -10,14 +10,14 @@ let s:background = "000000"
 let s:selection = "420000"
 let s:line = "2a2a2a"
 let s:comment = "2a5680"
-let s:red = "DA4939"
+let s:red = "da4939"
 let s:highyellow = "ffff00"
 let s:darkred = "1b000d"
 let s:orange = "ffc66d"
 let s:brown = "cc7833"
 let s:yellow = "ffc66d"
 let s:green = "a5c261"
-let s:darkgreen = "519F50"
+let s:darkgreen = "519f50"
 let s:aqua = "66ccff"
 let s:blue = "6d9cbe"
 let s:purple = "c397d8"
@@ -252,7 +252,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("StatusLine", s:grey2, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:grey2, s:grey3, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
-	call <SID>X("Visual", "", s:selection, "")
+	call <SID>X("Visual", s:background, s:highyellow, "")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
 	call <SID>X("MoreMsg", s:green, "", "")
