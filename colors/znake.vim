@@ -5,28 +5,35 @@
 " Pretty much stolen from the Tomorrow theme https://github.com/chriskempson/tomorrow-theme
 
 " Default GUI Colours
-let s:foreground = "eaeaea"
-let s:background = "000000"
-let s:selection = "420000"
-let s:line = "2a2a2a"
+let s:white = "eaeaea"
+let s:black = "000000"
+let s:darkgrey = "2a2a2a"
 let s:comment = "2a5680"
 let s:red = "da4939"
-let s:highyellow = "ffff00"
 let s:darkred = "1b000d"
 let s:orange = "ffc66d"
 let s:brown = "cc7833"
+let s:highyellow = "ffff00"
 let s:yellow = "ffc66d"
 let s:green = "a5c261"
+let s:highgreen = "abff00"
 let s:darkgreen = "519f50"
-let s:aqua = "66ccff"
 let s:blue = "6d9cbe"
 let s:purple = "c397d8"
 let s:purplelight = "f5c5f1"
-let s:window = "4d5057"
+let s:middlegrey = "4d5057"
 let s:pink = "ff0080"
+let s:darkpink = "6f0037"
 let s:grey1 = "535353"
 let s:grey2 = "191919"
 let s:grey3 = "868686"
+
+let s:wikired    = "ff6666"
+let s:wikiorange = "ff8000"
+let s:wikiyellow = "ffff66"
+let s:wikiaqua   = "66ffcc"
+let s:wikigreen  = "008040"
+let s:wikiblue   = "66ccff"
 
 set background=dark
 hi clear
@@ -243,45 +250,55 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	endfun
 
 	" Vim Highlighting
-	call <SID>X("Normal", s:foreground, s:background, "")
-	call <SID>X("LineNr", s:grey1, "", "")
-	call <SID>X("NonText", s:selection, "", "")
-	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:background, s:yellow, "")
-	call <SID>X("TabLine", s:foreground, s:background, "reverse")
-	call <SID>X("StatusLine", s:grey2, s:yellow, "reverse")
-	call <SID>X("StatusLineNC", s:grey2, s:grey3, "reverse")
-	call <SID>X("VertSplit", s:window, s:window, "none")
-	call <SID>X("Visual", s:background, s:highyellow, "")
+	call <SID>X("Normal", s:white, s:black, "")
+	call <SID>X("darkgreyNr", s:grey1, "", "")
+	call <SID>X("NonText", s:darkred, "", "")
+	call <SID>X("SpecialKey", s:darkred, "", "")
+	call <SID>X("Search", s:black, s:yellow, "")
+	call <SID>X("Tabdarkgrey", s:white, s:black, "reverse")
+	call <SID>X("Statusdarkgrey", s:grey2, s:yellow, "reverse")
+	call <SID>X("StatusdarkgreyNC", s:grey2, s:grey3, "reverse")
+	call <SID>X("VertSplit", s:middlegrey, s:middlegrey, "none")
+  call <SID>X("Visual", "", s:darkpink, "")
+	"call <SID>X("Visual", "", s:black, "reverse")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
-	call <SID>X("MatchParen", "", s:selection, "")
-	call <SID>X("Folded", s:comment, s:background, "")
-	call <SID>X("FoldColumn", "", s:background, "")
+	call <SID>X("MatchParen", "", s:black, "reverse")
+	call <SID>X("Folded", s:comment, s:black, "")
+	call <SID>X("FoldColumn", "", s:black, "")
 	if version >= 700
-		call <SID>X("Cursor", "", s:highyellow, "none")
+		call <SID>X("Cursor", "", s:pink, "none")
+		call <SID>X("LineNr", s:grey3, "", "none")
+		call <SID>X("Cursordarkgrey", "", s:darkred, "none")
+		call <SID>X("CursorColumn", "", s:darkred, "none")
 		call <SID>X("CursorLine", "", s:darkred, "none")
-		call <SID>X("CursorColumn", "", s:line, "none")
-		call <SID>X("PMenu", s:foreground, s:selection, "none")
-		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
+		call <SID>X("CursorLineNr", s:pink, "", "none")
+		call <SID>X("PMenu", s:white, s:darkred, "none")
+		call <SID>X("PMenuSel", s:white, s:darkred, "reverse")
 	end
 	if version >= 703
-		call <SID>X("ColorColumn", "", s:line, "none")
+		call <SID>X("ColorColumn", "", s:darkred, "none")
 	end
+
+  call <SID>X("DiffAdd", s:black, s:green, "")
+  call <SID>X("DiffChange", s:black, s:blue, "")
+  call <SID>X("DiffText", s:black, s:white, "")
+  call <SID>X("DiffDelete", s:black, s:red, "")
+
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("Todo", s:comment, s:background, "")
+	call <SID>X("Todo", s:comment, s:black, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:blue, "", "none")
-	call <SID>X("Statement", s:foreground, "", "")
-	call <SID>X("Conditional", s:foreground, "", "")
-	call <SID>X("Repeat", s:foreground, "", "")
+	call <SID>X("Statement", s:white, "", "")
+	call <SID>X("Conditional", s:white, "", "")
+	call <SID>X("Repeat", s:white, "", "")
 	call <SID>X("Number", s:yellow, "", "")
-	call <SID>X("Structure", s:orange, "", "")
+	call <SID>X("Structure", s:red, "", "")
 	call <SID>X("Function", s:orange, "", "")
 	call <SID>X("Constant", s:blue, "", "")
 	call <SID>X("String", s:green, "", "")
@@ -294,7 +311,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
-  call <SID>X("vimCommand", s:foreground, "", "none")
+  call <SID>X("vimCommand", s:white, "", "none")
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
@@ -308,7 +325,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("phpRepeat", s:purple, "", "")
 	call <SID>X("phpConditional", s:purple, "", "")
 	call <SID>X("phpStatement", s:purple, "", "")
-	call <SID>X("phpMemberSelector", s:foreground, "", "")
+	call <SID>X("phpMemberSelector", s:white, "", "")
 
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:blue, "", "")
@@ -338,7 +355,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonFunction", s:blue, "", "")
 
 	" JavaScript Highlighting
-	"call <SID>X("javaScriptBraces", s:foreground, "", "")
+	"call <SID>X("javaScriptBraces", s:white, "", "")
   call <SID>X("javaScriptFunction", s:brown, "", "")
   call <SID>X("javaScriptNumber", s:yellow, "", "")
 	"call <SID>X("javaScriptConditional", s:purple, "", "")
@@ -357,6 +374,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("diffAdded", s:green, "", "")
 	call <SID>X("diffRemoved", s:red, "", "")
 
+  call <SID>X("VimwikiHeader1", s:wikired, "", "")
+  call <SID>X("VimwikiHeader2", s:wikiorange, "", "")
+  call <SID>X("VimwikiHeader3", s:wikiyellow, "", "")
+  call <SID>X("VimwikiHeader4", s:wikiaqua, "", "")
+  call <SID>X("VimwikiHeader5", s:wikigreen, "", "")
+  call <SID>X("VimwikiHeader6", s:wikiblue, "", "")
+
 	" Delete Functions
 	delf <SID>X
 	delf <SID>rgb
@@ -368,3 +392,4 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	delf <SID>grey_level
 	delf <SID>grey_number
 endif
+
