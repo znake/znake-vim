@@ -16,17 +16,23 @@ let s:brown = "cc7833"
 let s:highyellow = "ffff00"
 let s:yellow = "ffc66d"
 let s:green = "a5c261"
+"let s:green = "87af00"
 let s:highgreen = "abff00"
 let s:darkgreen = "519f50"
+let s:diffpink = "820745"
+let s:difflila = "3d0321"
+let s:diffgreen = "033108"
+let s:diffred = "760c07"
 let s:blue = "6d9cbe"
 let s:purple = "c397d8"
-let s:purplelight = "f5c5f1"
+let s:rubyinstance = "D0D0FF"
 let s:middlegrey = "4d5057"
 let s:pink = "ff0080"
 let s:darkpink = "6f0037"
 let s:grey1 = "535353"
 let s:grey2 = "191919"
 let s:grey3 = "868686"
+let s:linenr = "333333"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -271,7 +277,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("FoldColumn", "", s:black, "")
 	if version >= 700
 		call <SID>X("Cursor", "", s:pink, "none")
-		call <SID>X("LineNr", s:grey3, "", "none")
+		call <SID>X("LineNr", s:linenr, "", "none")
 		call <SID>X("Cursordarkgrey", "", s:darkred, "none")
 		call <SID>X("CursorColumn", "", s:darkred, "none")
 		call <SID>X("CursorLine", "", s:darkred, "none")
@@ -283,19 +289,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("ColorColumn", "", s:darkred, "none")
 	end
 
-  call <SID>X("DiffAdd", s:black, s:green, "")
-  call <SID>X("DiffChange", s:black, s:blue, "")
-  call <SID>X("DiffText", s:black, s:white, "")
-  call <SID>X("DiffDelete", s:black, s:red, "")
+  call <SID>X("DiffAdd", "", s:diffgreen, "")
+  call <SID>X("DiffChange", "",s:difflila, "")
+  call <SID>X("DiffText", "", s:diffpink, "")
+  call <SID>X("DiffDelete", s:diffred, s:diffred, "")
 
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Todo", s:comment, s:black, "")
-	call <SID>X("Title", s:comment, "", "")
+	call <SID>X("Title", s:white, "", "")
 	call <SID>X("Identifier", s:blue, "", "none")
 	call <SID>X("Statement", s:white, "", "")
-	call <SID>X("Conditional", s:white, "", "")
 	call <SID>X("Repeat", s:white, "", "")
 	call <SID>X("Number", s:yellow, "", "")
 	call <SID>X("Structure", s:red, "", "")
@@ -309,6 +314,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Define", s:brown, "", "none")
 	call <SID>X("Include", s:blue, "", "")
   call <SID>X("Ignore", "666666", "", "")
+  call <SID>X("Keyword", s:orange, "", "")
+  call <SID>X("Conditional", s:brown, "", "")
+	"call <SID>X("Keyword", s:red, s:black, "")
+	"call <SID>X("Conditional", s:white, "", "")
 
 	" Vim Highlighting
   call <SID>X("vimCommand", s:white, "", "none")
@@ -330,23 +339,25 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:blue, "", "")
 	call <SID>X("rubyConstant", s:red, "", "")
+	call <SID>X("rubyKeyword", s:red, "", "")
+	call <SID>X("rubyBeginEnd", s:brown, "", "")
 	call <SID>X("rubyAttribute", s:brown, "", "")
+	call <SID>X("rubyControl", s:brown, "", "")
 	call <SID>X("rubyInclude", s:blue, "", "")
 	call <SID>X("rubyLocalVariableOrMethod", s:brown, "", "")
-	call <SID>X("rubyCurlyBlock", s:red, "", "")
 	call <SID>X("rubyStringDelimiter", s:green, "", "")
   call <SID>X("rubyInterpolation", s:darkgreen, "", "")
 	call <SID>X("rubyInterpolationDelimiter", s:darkgreen, "", "")
-	call <SID>X("rubyConditional", s:purple, "", "")
-	call <SID>X("rubyRepeat", s:purple, "", "")
-  call <SID>X("rubyBlockParameter", s:blue, "", "")
+  call <SID>X("rubyConditional", s:brown, "", "")
+	call <SID>X("rubyRepeat", s:brown, "", "")
+  call <SID>X("rubyBlockParameter", s:purple, "", "")
   call <SID>X("rubyClass", s:brown, "", "")
+  call <SID>X("rubyClassVariable", s:red, "", "")
   call <SID>X("rubyFunction", s:orange, "", "")
-  call <SID>X("rubyInstanceVariable", s:purplelight, "", "")
-  "call <SID>X("rubyLocalVariableOrMethod", s:brown, "", "")
-  "call <SID>X("rubyPredefinedConstant", s:brown, "", "")
-  "call <SID>X("rubyPseudoVariable", s:brown, "", "")
-
+  call <SID>X("rubyInstanceVariable", s:rubyinstance, "", "")
+  call <SID>X("railsClass", s:red, "", "")
+  "call <SID>X("rubyBlock", s:brown, "", "")
+  "call <SID>X("rubyDoBlock", s:brown, "", "")
 
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
@@ -358,10 +369,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("javaScriptBraces", s:white, "", "")
   call <SID>X("javaScriptFunction", s:brown, "", "")
   call <SID>X("javaScriptNumber", s:yellow, "", "")
-	"call <SID>X("javaScriptConditional", s:purple, "", "")
-	"call <SID>X("javaScriptRepeat", s:purple, "", "")
-	"call <SID>X("javaScriptNumber", s:orange, "", "")
-	"call <SID>X("javaScriptMember", s:orange, "", "")
+  call <SID>X("javaScriptThis", s:red, "", "")
 
 	" HTML Highlighting
 	call <SID>X("htmlTag", s:orange, "", "")
@@ -369,10 +377,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("htmlTagName", s:orange, "", "")
 	call <SID>X("htmlArg", s:brown, "", "")
 	call <SID>X("htmlScriptTag", s:orange, "", "")
+	call <SID>X("htmlLink", s:blue, "", "")
 
-	" Diff Highlighting
-	call <SID>X("diffAdded", s:green, "", "")
-	call <SID>X("diffRemoved", s:red, "", "")
+  "XML Highlighting
+	call <SID>X("xmlTag", s:orange, "", "")
+	call <SID>X("xmlEndTag", s:orange, "", "")
+
 
   call <SID>X("VimwikiHeader1", s:wikired, "", "")
   call <SID>X("VimwikiHeader2", s:wikiorange, "", "")
