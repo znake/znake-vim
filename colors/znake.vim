@@ -5,34 +5,33 @@
 " Pretty much stolen from the Tomorrow theme https://github.com/chriskempson/tomorrow-theme
 
 " Default GUI Colours
-let s:white = "eaeaea"
-let s:black = "000000"
-let s:darkgrey = "2a2a2a"
-let s:comment = "2a5680"
-let s:red = "da4939"
-let s:darkred = "1b000d"
-let s:orange = "ffc66d"
-let s:brown = "cc7833"
-let s:highyellow = "ffff00"
-let s:yellow = "ffc66d"
-let s:green = "a5c261"
-"let s:green = "87af00"
-let s:highgreen = "abff00"
-let s:darkgreen = "519f50"
-let s:diffpink = "820745"
-let s:difflila = "3d0321"
-let s:diffgreen = "033108"
-let s:diffred = "760c07"
-let s:blue = "6d9cbe"
-let s:purple = "c397d8"
-let s:rubyinstance = "D0D0FF"
+let s:white      = "eaeaea"
+let s:black      = "000000"
+let s:red        = "da4939"
+let s:darkred    = "1b000d"
+let s:orange     = "ffc66d"
+let s:brown      = "cc7833"
+let s:yellow     = "ffc66d"
+let s:green      = "a5c261"
+"let s:green     = "87af00"
+let s:darkgreen  = "519f50"
+let s:blue       = "6d9cbe"
+let s:purple     = "c397d8"
+let s:instance   = "D0D0FF"
 let s:middlegrey = "4d5057"
-let s:pink = "ff0080"
-let s:darkpink = "6f0037"
-let s:grey1 = "535353"
-let s:grey2 = "191919"
-let s:grey3 = "868686"
-let s:linenr = "333333"
+let s:pink       = "ff0080"
+let s:darkpink   = "6f0037"
+let s:grey1      = "535353"
+let s:grey2      = "191919"
+let s:grey3      = "868686"
+
+let s:comment = "2a5680"
+let s:linenr  = "333333"
+
+let s:diffgreen  = "033108"
+let s:diffred    = "760c07"
+let s:diffchange = "19344e"
+let s:difftext   = "3874af"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -290,8 +289,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
-  call <SID>X("DiffChange", "",s:difflila, "")
-  call <SID>X("DiffText", "", s:diffpink, "")
+  call <SID>X("DiffChange", "",s:diffchange, "")
+  call <SID>X("DiffText", "", s:difftext, "")
   call <SID>X("DiffDelete", s:diffred, s:diffred, "")
 
 
@@ -354,7 +353,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X("rubyClass", s:brown, "", "")
   call <SID>X("rubyClassVariable", s:red, "", "")
   call <SID>X("rubyFunction", s:orange, "", "")
-  call <SID>X("rubyInstanceVariable", s:rubyinstance, "", "")
+  call <SID>X("rubyInstanceVariable", s:instance, "", "")
   call <SID>X("railsClass", s:red, "", "")
   "call <SID>X("rubyBlock", s:brown, "", "")
   "call <SID>X("rubyDoBlock", s:brown, "", "")
