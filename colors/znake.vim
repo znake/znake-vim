@@ -8,7 +8,7 @@
 let s:white      = "eaeaea"
 let s:black      = "000000"
 let s:red        = "da4939"
-let s:darkred    = "1b000d"
+let s:darkred    = "2a0014"
 let s:orange     = "ffc66d"
 let s:brown      = "cc7833"
 let s:yellow     = "ffc66d"
@@ -24,14 +24,16 @@ let s:darkpink   = "6f0037"
 let s:grey1      = "535353"
 let s:grey2      = "191919"
 let s:grey3      = "868686"
+let s:darkgrey   = "0b0b0b"
 
-let s:comment = "2a5680"
-let s:linenr  = "333333"
+let s:comment    = "2a5680"
+let s:linenr     = "333333"
+let s:linecolumn = "230012"
 
 let s:diffgreen  = "033108"
-let s:diffred    = "760c07"
+let s:diffred    = "5e0a06"
 let s:diffchange = "19344e"
-let s:difftext   = "3874af"
+let s:difftext   = "5b3616"
 
 let s:wikired    = "ff6666"
 let s:wikiorange = "ff8000"
@@ -259,7 +261,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("darkgreyNr", s:grey1, "", "")
 	call <SID>X("NonText", s:darkred, "", "")
 	call <SID>X("SpecialKey", s:darkred, "", "")
-	call <SID>X("Search", s:black, s:yellow, "")
+	call <SID>X("Search", s:black, s:blue, "")
 	call <SID>X("Tabdarkgrey", s:white, s:black, "reverse")
 	call <SID>X("Statusdarkgrey", s:grey2, s:yellow, "reverse")
 	call <SID>X("StatusdarkgreyNC", s:grey2, s:grey3, "reverse")
@@ -279,13 +281,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("LineNr", s:linenr, "", "none")
 		call <SID>X("Cursordarkgrey", "", s:darkred, "none")
 		call <SID>X("CursorColumn", "", s:darkred, "none")
-		call <SID>X("CursorLine", "", s:darkred, "none")
+		call <SID>X("CursorLine", "", s:linecolumn, "none")
 		call <SID>X("CursorLineNr", s:pink, "", "none")
 		call <SID>X("PMenu", s:white, s:darkred, "none")
 		call <SID>X("PMenuSel", s:white, s:darkred, "reverse")
 	end
 	if version >= 703
-		call <SID>X("ColorColumn", "", s:darkred, "none")
+		call <SID>X("ColorColumn", "", s:darkgrey, "none")
 	end
 
   call <SID>X("DiffAdd", "", s:diffgreen, "")
@@ -334,6 +336,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("phpConditional", s:purple, "", "")
 	call <SID>X("phpStatement", s:purple, "", "")
 	call <SID>X("phpMemberSelector", s:white, "", "")
+
+	" CoffeeScript Highlighting
+	call <SID>X("coffeeInterpDelim", s:darkgreen, "", "")
+	call <SID>X("SignColumn", "", s:black, "")
 
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:blue, "", "")
